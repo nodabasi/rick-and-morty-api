@@ -17,6 +17,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "~0.63.4",
+    "react-native-axios": "^0.17.1",
     "react-native-gesture-handler": "~1.10.2",
     "react-native-modal": "^13.0.0",
     "react-native-progress": "^5.0.0",

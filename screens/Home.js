@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Text, View, Image,StyleSheet, ScrollView, TouchableOpacity} from 'react-native';
-import Episode from './Episode';
 import Loading from './Loading';
 import { useNavigation,useRoute } from '@react-navigation/native';
 
@@ -19,10 +18,6 @@ export default Home = () => {
       .finally(() => setLoading(false)); /* false kısmını true yaparak yükleme ekranını görebilirsiniz, bu projede yükleme süresi kısa olacağı için ekran hiç gözükmeyebilir*/
   }, []);
 
-  const onPressHandler = (num)=>{
-    navigation.navigate("Episode",{EpisodeNumber:num})
-  }
-
   return (
     <View style={styles.container}>
       {isLoading ? <Loading/> : 
@@ -32,12 +27,11 @@ export default Home = () => {
           </View>
           <View style={{flex:1}}>
           <ScrollView>
-            
             {data.results.map(({episode,name,id},key)=>{
               return(
                 <View key={key}>
-                <TouchableOpacity style={styles.items} onPress={()=>navigation.navigate("Episode",{epNum:id})}>  
-                <Text style={{fontSize:22,fontWeight:'bold'}}>{name+" " + id}</Text>
+                <TouchableOpacity key={id} style={styles.items} onPress={()=>navigation.navigate("Episode",{epNum:id})}>  
+                <Text style={{fontSize:22,fontWeight:'bold'}}>{name}</Text>
                 <Text style={{fontSize:18}}>{episode}</Text>
                 </TouchableOpacity>
                 </View>
