@@ -1,13 +1,21 @@
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import {View,StyleSheet} from 'react-native';
+import Episode from './screens/Episode';
 import Home from './screens/Home';
+
+const Stack = createStackNavigator();
 
 export default App = () => {
 
   return (
-    <View style={styles.container}>
-     <Home/>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen options={{title:"Rick and Morty"}} name="Home" component={Home} />
+        <Stack.Screen name="Episode" component={Episode}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
