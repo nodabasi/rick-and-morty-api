@@ -8,8 +8,10 @@ const Character = () => {
   
     const navigation = useNavigation();
     const route = useRoute();
-    const [isLoading, setLoading] = useState(true); //UI yapıldıktan sonra false olacak
-    const source= 'https://rickandmortyapi.com/api/character/1';
+
+    let source= route.params.url;
+
+    const [isLoading, setLoading] = useState(true);
 
     const windowWidth = Dimensions.get('window').width;
 
