@@ -15,7 +15,7 @@ export default Home = () => {
       .then((response) => response.json())
       .then((json) => setData(json))
       .catch((error) => console.error(error))
-      .finally(() => setLoading(false)); /* false kısmını true yaparak yükleme ekranını görebilirsiniz, bu projede yükleme süresi kısa olacağı için ekran hiç gözükmeyebilir*/
+      .finally(() => setLoading(false));
   }, []);
 
   return (

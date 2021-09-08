@@ -44,10 +44,10 @@ const Episode = ()=> {
             axios.get(char)
             .then( function(response){
                 const person =(response.data)
-                console.log("------------------------")
-                console.log(person)
+                //console.log("------------------------")
+                //console.log(person)
                 charArray.push(person)
-                console.log(charArray.length)
+                //console.log(charArray.length)
             })
         })
         if(arr){
@@ -93,7 +93,7 @@ const Episode = ()=> {
                 refreshing={refreshing}
                 onRefresh={onRefresh}
               />}>
-                  {isRefreshed?  <Text >Api yüklenmesi uzun sürebiliyor ve can sıkabiliyordu sarı alana refresh atarak daha hızlı erişim sağlayabiliyorum bu yüzden bu şekilde bıraktım</Text>
+                  {isRefreshed? <View  style={{justifyContent:'center',alignItems:'center'}} ><Text>Drag Down for Refresh</Text></View> 
                 :<View></View>}
                 {charData.map(({image,name,species,url},key)=>{
                     return(
